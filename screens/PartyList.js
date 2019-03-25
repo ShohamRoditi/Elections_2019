@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import Party from './Party'
 import { View } from 'react-native'
 import styles from '../styles'
 
 class PartyList extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -15,7 +14,7 @@ class PartyList extends Component {
     this.eachParty = this.eachParty.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const url = 'https://isr-elections.herokuapp.com/api/parties'
     fetch(url)
       .then(res => res.json())
@@ -23,23 +22,25 @@ class PartyList extends Component {
         data.parties.map(json => {
           this.setState(prevState => ({
             parties: [
-              ...prevState.parties, {
+              ...prevState.parties,
+              {
                 id: json.id
-              }]
+              }
+            ]
           }))
           return null
         })
       })
   }
 
-  eachParty (party, i) {
-    return (<Party key={ `party${i}` } party_name={ party.id } ></Party>)
+  eachParty(party, i) {
+    return <Party key={`party${i}`} party_name={party.id} />
   }
 
-  render () {
+  render() {
     return (
-      <View style={styles.list} className = "PartyList">
-        { this.state.parties.map(this.eachParty) }
+      <View style={styles.list} className="PartyList">
+        {this.state.parties.map(this.eachParty)}
       </View>
     )
   }

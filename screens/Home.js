@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { View, Button, ScrollView } from 'react-native';
-import PartyList from './PartyList';
+import React, { Component } from 'react'
+import { View, Button, ScrollView } from 'react-native'
+import PartyList from './PartyList'
+import styles from '../styles'
 
 export class Home extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -22,10 +23,10 @@ export class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <ScrollView>
-        <PartyList key={1} />
-      </ScrollView>
-    </View>
+        <ScrollView>
+          <PartyList key={1} />
+        </ScrollView>
+      </View>
     )
   }
 }

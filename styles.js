@@ -9,9 +9,7 @@ export default (styles = StyleSheet.create({
   list: {
     flex: 1,
     flexDirection: 'row',
-    // justifyContent: 'space-between',
-    justifyContent: 'space-around',
-    // justifyContent: 'center',
+    justifyContent: 'space-between',
     flexWrap: 'wrap'
   },
   card: {

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 import TopFiveElections from './screens/TopFiveElections'
 import Home from './screens/Home'
